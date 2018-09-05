@@ -91,7 +91,7 @@ if [ ! -z "$nvdown" ]; then
         if [ ! -z "$ninstall" ]; then echo "Cannot install."; exit 1; fi
     fi
     if [ ! -z "$ninstall" ]; then
-        sh "$dir/$nvname" --silent --disable-nouveau --dkms --install-libglvnd
+        sh "$dir/$nvname" --silent --disable-nouveau --dkms --install-libglvnd --no-check-for-alternate-installs
         echo "Driver installed."
     fi
 fi
