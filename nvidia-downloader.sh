@@ -74,6 +74,8 @@ if [ ! -z "$nvdown" ]; then
     [ -d "$dir" ] || mkdir -p "$dir"
     if [ -z "$nstable" ]; then vers=$shortv; else vers=$longv; fi
 
+    echo "WARNING: By downloading/installing NVIDIA drivers you explicitly agree to the 'License For Customer Use of NVIDIA Software'"
+
     nvname="NVIDIA-Linux-x86_64-$vers.run"
     nvpath="http://us.download.nvidia.com/XFree86/Linux-x86_64/$vers/$nvname"
 
