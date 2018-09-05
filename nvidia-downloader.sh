@@ -48,6 +48,10 @@ while getopts ":hidsp:" opt; do
         p)
             dir="$OPTARG"
             ;;
+        :)
+            echo "Option -p requires an argument." >&2
+            exit 1
+            ;;
     esac
 done
 
