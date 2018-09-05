@@ -3,15 +3,15 @@
 depcheck () {
     if ! command -v "$1" >/dev/null 2>&1
     then
-        echo "I require $1 ($2) but it's not installed."
+        echo "I require $1 but it's not installed."
         exit 1
     fi
 }
 
-depcheck curl curl
-depcheck grep grep
-depcheck sed sed
-depcheck wget wget
+depcheck curl 
+depcheck grep
+depcheck sed
+depcheck wget
 
 help="nvidia-downloader [-h] [-d] [-i] [-s] [-p] -- script to check/download/install nvidia drivers
 
