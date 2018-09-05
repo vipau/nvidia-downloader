@@ -9,8 +9,8 @@ no options: check lastest Nvidia driver versions.
 Check -h for further help
 
 ## FAQ
-Q: 32-bit drivers / FreeBSD / Solaris?
-A: Maybe in the future. It's gonna be a pain to parse the page.
+Q: 32-bit drivers / FreeBSD / Solaris?  
+A: Maybe in the future. It's gonna be a pain to parse the page.  
 
-Q: Are penguins cute?
+Q: Are penguins cute?  
 A: For sure 
