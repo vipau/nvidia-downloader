@@ -68,7 +68,15 @@ fi
 # time for checky checherino... god help
 shortv=$(curl --silent --stderr - 'https://www.nvidia.com/object/unix.html' | grep -m 1 'Latest Short' | sed 's/.*\">\(.*\)<\/.*/\1/g')
 longv=$(curl --silent --stderr - 'https://www.nvidia.com/object/unix.html' | grep -m 1 'Latest Long' | sed 's/.*\">\(.*\)<\/.*/\1/g') 
-echo -e "Lastest Short Lived (beta) driver: $shortv \nLastest Long Lived (stable) driver: $longv\n"
+echo -e "Lastest Short Lived (beta) driver: $shortv \nLastest Long Lived (stable) driver: $longv"
+if command -v modinfo 2>&1 >/dev/null
+then
+	vrs=$(modinfo nvidia|grep '^version:' | awk '{print $2}')
+	if [ ! -z $vrs ]
+	then	
+		echo -e "Installed driver: $vrs\n"
+	fi	
+fi
 if [ -z "$nvdown" ]; then echo -e "Check -h for help."; fi
 
 # dear NVIDIA, if you're reading this,
