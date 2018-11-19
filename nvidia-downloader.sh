@@ -75,8 +75,16 @@ then
 	if [ ! -z $vrs ]
 	then	
 		echo -e "Installed driver: $vrs\n"
+        tmpdone=1
 	fi	
+    else
+        if [ -z $tmpdone ]
+        then
+            vrs=$(cat /proc/driver/nvidia/version | sed -nE 's/.*Module[[:space:]]+([0-9.]+).*  .*/\1/p')
+            echo -e "Installed driver: $vrs\n"
+        fi
 fi
+unset tmpdone
 if [ -z "$nvdown" ]; then echo -e "Check -h for help."; fi
 
 # dear NVIDIA, if you're reading this,
