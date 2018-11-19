@@ -78,7 +78,7 @@ then
         tmpdone=1
 	fi	
     else
-        if [ -z $tmpdone ]
+        if [ -z $tmpdone ] && [ -f /proc/driver/nvidia/version ]
         then
             vrs=$(cat /proc/driver/nvidia/version | sed -nE 's/.*Module[[:space:]]+([0-9.]+).*  .*/\1/p')
             echo -e "Installed driver: $vrs\n"
